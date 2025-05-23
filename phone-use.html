@@ -62,5 +62,12 @@
       ✅ I’m willing to earn more freedom over time by showing I can use my phone safely and maturely.
     </div>
   </section>
+
+  <script>
+    if (localStorage.getItem("loggedIn") !== "yes") {
+  document.body.innerHTML = "<h1>🔒 You must log in first!</h1>";
+}
+
+  </script>
 </body>
 </html>
