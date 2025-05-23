@@ -21,6 +21,11 @@
       }
     }
 
+    if (localStorage.getItem("loggedIn") !== "yes") {
+  document.body.innerHTML = "<h1>🔒 You must log in first!</h1>";
+}
+
+
     checkIP();
     
   </script>
