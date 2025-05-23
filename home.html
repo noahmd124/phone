@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Why I deserve / need a phone...</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #d0eaff, #f4f4ff);
+      overflow-x: hidden;
+      color: #333;
+    }
+
+    header {
+      text-align: center;
+      padding: 2rem 1rem;
+      background: #5a91e8;
+      color: white;
+      animation: slideDown 1s ease-out;
+    }
+
+    @keyframes slideDown {
+      from { transform: translateY(-100%); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    main {
+      padding: 2rem;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    section {
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+      margin-bottom: 2rem;
+      padding: 1.5rem;
+      animation: fadeIn 1.5s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h1, h2 {
+      margin-top: 0;
+    }
+
+    ul li {
+      margin-bottom: 0.6rem;
+    }
+
+    .good-bad-game {
+      display: flex;
+      gap: 2rem;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .game-box {
+      flex: 1 1 40%;
+      background: #f9f9f9;
+      padding: 1rem;
+      border-radius: 12px;
+      box-shadow: inset 0 0 10px rgba(0,0,0,0.05);
+      transition: transform 0.3s;
+    }
+
+    .game-box:hover {
+      transform: scale(1.05);
+      background: #e7ffe7;
+    }
+
+    .game-box h3 {
+      color: #2ecc71;
+    }
+
+    .game-box.good h3 {
+      color: #2ecc71;
+    }
+
+    .resources a {
+      display: block;
+      margin: 0.5rem 0;
+      text-decoration: none;
+      color: #0077cc;
+      transition: all 0.3s ease;
+    }
+
+    .resources a:hover {
+      color: #ff6600;
+      font-weight: bold;
+    }
+
+    .fun-zone {
+      background: #fff8d1;
+      padding: 1rem;
+      border: 2px dashed #ffc107;
+      border-radius: 10px;
+      text-align: center;
+      font-size: 1.2rem;
+    }
+
+    .fun-zone button {
+      padding: 0.6rem 1rem;
+      margin: 1rem;
+      font-size: 1rem;
+      background: #4caf50;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
+    }
+
+    .fun-zone button:hover {
+      background: #45a049;
+      transform: scale(1.1);
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #eee;
+    }
+
+    #cookie-banner {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background: #333;
+      color: white;
+      padding: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    #cookie-banner button {
+      background: #4caf50;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      border-radius: 6px;
+    }
+	
+	  h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+      color: #2b6cb0;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .reason-card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease;
+      position: relative;
+      height: 200px;
+      cursor: pointer;
+    }
+
+    .reason-card:hover {
+      transform: scale(1.05);
+    }
+
+    .reason-card .front,
+    .reason-card .back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      padding: 1.2rem;
+      box-sizing: border-box;
+      backface-visibility: hidden;
+      transition: opacity 0.5s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .reason-card .front {
+      background: #ffe0e0;
+      color: #800000;
+      font-weight: bold;
+      z-index: 1;
+    }
+
+    .reason-card .back {
+      background: #d4ffe5;
+      color: #005f2f;
+      font-weight: bold;
+      opacity: 0;
+      z-index: 2;
+    }
+
+    .reason-card:hover .front {
+      opacity: 0;
+    }
+
+    .reason-card:hover .back {
+      opacity: 1;
+    }
+	
+	
+	
+	
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Why I Need A Phone</h1>
+    <p>Let’s explore why a phone is not just cool — it’s smart and safe!</p>
+	<a href="phone-use.html"><p>Check out my phone use plan!</p></a>
+	
+  </header>
+
+  <main>
+    <section class="fun-zone">
+      <p>✨ Click the button to reveal a random awesome reason I should get a phone!</p>
+      <button onclick="showReason()">Show Reason</button>
+      <p id="reason-output"></p>
+    </section>
+
+    <section class="game-section">
+      <h2>My Reasons</h2>
+      <p>Check them out!</p>
+      <div class="good-bad-game">
+        <div class="game-box">
+          <h3>✅ Increased Social Interactions</h3>
+          <p>If I want to go somewhere, do something, I would just check with you, and form a quick text.</p>
+        </div>
+        <div class="game-box good">
+          <h3>✅ I want to use apps for learning and language</h3>
+          <p>Like Duolingo, Mimo & Chess.com</p>
+        </div>
+        <div class="game-box">
+          <h3>✅ </h3>
+          <p>That’s not a strong reason for something important.</p>
+        </div>
+        <div class="game-box good">
+          <h3>✅ So I can call you when I’m doing something afterschool or other activities</h3>
+          <p>What if I have been kidnapped, or want to go to a club but haven't told you?</p>
+        </div>
+      </div>
+    </section>
+	
+	 <h2>🙄 Bad Reasons vs. My Comebacks 💪</h2>
+  <div class="card-grid">
+    <div class="reason-card">
+      <div class="front">'I'll use it at school'</div>
+      <div class="back">School has just gone phone-free! It would be in a pouch the whole day.</div>
+    </div>
+    <div class="reason-card">
+      <div class="front">“You’re too young.”</div>
+      <div class="back">I’ve shown I’m responsible with chores and schoolwork!</div>
+    </div>
+    <div class="reason-card">
+      <div class="front">“You don’t need one.”</div>
+      <div class="back">It’s not about needing, it’s about learning to use it wisely early on.</div>
+    </div>
+    <div class="reason-card">
+      <div class="front">“You’ll just play games.”</div>
+      <div class="back">Only if allowed—and I’ll balance it with real-life responsibilities!</div>
+    </div>
+    <div class="reason-card">
+      <div class="front">“Too much screentime is bad.”</div>
+      <div class="back">I’ll follow screen time limits you set and take breaks often!</div>
+    </div>
+  </div>
+  
+  <br>
+  <br>
+  <br>
+  <br>
+
+    <section class="resources">
+      <h2>📰 Articles That Show Why Kids Benefit From Phones</h2>
+      <a href="https://troomi.com/blog/5-reasons-why-kids-should-have-phones/" target="_blank">Troomi: Should kids have smartphones?</a>
+      <a href="https://www.theguardian.com/technology/2025/apr/14/mobile-phones-in-schools-can-be-an-aid-to-learning" target="_blank">Guardian: Phones Are An Aid To Learning</a>
+      <a href="https://www.gohenry.com/uk/blog/family/10-reasons-why-kids-should-have-mobile-phones" target="_blank">GoHenry: Safety with smartphones</a>
+    </section>
+  </main>
+  
+   
+
+  <footer>
+    Made by someone who’s responsible and ready for a phone 😁
+  </footer>
+
+  <div id="cookie-banner">
+    <span>This site uses cookies to enhance fun and learning 🍪</span>
+    <button onclick="document.getElementById('cookie-banner').style.display='none'">Accept</button>
+  </div>
+
+  <script>
+    const reasons = [
+      "I can call you if I’m ever in trouble 🚨",
+      "I’ll use it to check homework and calendars 📚",
+      "I’ll follow all screen-time rules ⏳",
+      "I’ll prove I’m ready with responsibility points ✅",
+      "It’ll help me navigate with maps when I’m older 🗺️"
+    ];
+
+    function showReason() {
+      const output = document.getElementById('reason-output');
+      const randomIndex = Math.floor(Math.random() * reasons.length);
+      output.innerText = reasons[randomIndex];
+    }
+	
+	 
+
+</body>
+</html>
