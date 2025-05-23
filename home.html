@@ -334,7 +334,23 @@
       output.innerText = reasons[randomIndex];
     }
 	
-	 
+  const allowedIP = "123.45.67.89"; // Replace with your real IP
+
+  fetch("https://api.ipify.org?format=json")
+    .then(res => res.json())
+    .then(data => {
+      if (data.ip !== allowedIP) {
+        document.body.innerHTML = "<h1>🔒 Access Denied</h1><p>Your IP is not allowed.</p>";
+      } else {
+        // Allow access
+        console.log("✅ Access granted!");
+      }
+    })
+    .catch(err => {
+      document.body.innerHTML = "<h1>❌ Failed to check IP</h1>";
+    });
+</script>
+
 
 </body>
 </html>
