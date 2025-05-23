@@ -349,6 +349,13 @@
     .catch(err => {
       document.body.innerHTML = "<h1>❌ Failed to check IP</h1>";
     });
+
+
+	  if (localStorage.getItem("loggedIn") !== "yes") {
+  document.body.innerHTML = "<h1>🔒 You must log in first!</h1>";
+}
+
+	  
 </script>
 
 
