@@ -214,6 +214,67 @@
     .reason-card:hover .back {
       opacity: 1;
     }
+
+
+
+	.stats-container {
+      display: flex;
+      gap: 20px;
+    }
+
+    .stat-card {
+      width: 220px;
+      height: 220px;
+      perspective: 1000px;
+    }
+
+    .card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.6s;
+      transform-style: preserve-3d;
+    }
+
+    .stat-card:hover .card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .card-front, .card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 15px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      padding: 15px;
+    }
+
+    .card-front {
+      background: white;
+    }
+
+    .card-back {
+      background: #4a90e2;
+      color: white;
+      transform: rotateY(180deg);
+    }
+
+    .percentage {
+      font-size: 48px;
+      font-weight: bold;
+      color: #4a90e2;
+    }
+
+    .label {
+      font-size: 16px;
+      text-align: center;
+      margin-top: 10px;
+    }
 	
 	
 	
@@ -282,6 +343,51 @@
       <div class="back">I’ll follow screen time limits you set and take breaks often!</div>
     </div>
   </div>
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+	  <div class="stats-container">
+  <div class="stat-card">
+    <div class="card-inner">
+      <div class="card-front">
+        <div class="percentage">91%</div>
+        <div class="label">of 11-year-olds<br>have a smartphone</div>
+      </div>
+      <div class="card-back">
+        📱 Common in Year 7–8<br><br>– HyperJar 2024
+      </div>
+    </div>
+  </div>
+
+  <div class="stat-card">
+    <div class="card-inner">
+      <div class="card-front">
+        <div class="percentage">50%</div>
+        <div class="label">of 10-year-olds<br>own a smartphone</div>
+      </div>
+      <div class="card-back">
+        🧒 Getting one by age 10<br><br>– Ofcom 2023
+      </div>
+    </div>
+  </div>
+
+  <div class="stat-card">
+    <div class="card-inner">
+      <div class="card-front">
+        <div class="percentage">25%</div>
+        <div class="label">of 5–7-year-olds<br>already have one</div>
+      </div>
+      <div class="card-back">
+        👶 Even young kids now!<br><br>– BBC & Ofcom
+      </div>
+    </div>
+  </div>
+</div>
   
   <br>
   <br>
