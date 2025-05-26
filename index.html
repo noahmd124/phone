@@ -5,18 +5,25 @@
   <title>Checking Access...</title>
   <script>
     
-function _0x49eb(_0x40b97f,_0x1176ee){const _0x2e7f1d=_0x2e7f();return _0x49eb=function(_0x49eb40,_0x14004e){_0x49eb40=_0x49eb40-0x13c;
-let _0x50ebb6=_0x2e7f1d[_0x49eb40];return _0x50ebb6;},_0x49eb(_0x40b97f,_0x1176ee);}function _0x2e7f(){const _0x11be6a=['911970dRUAuu',
-'699265idgOMX','109.180.3.0','includes','106152rJYNXy','238338vcHTKZ','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<h1\x20style=\x22color:\
-x20red;\x20text-align:\x20center;\x20margin-top:\x2020%;\x22>🚫\x20Access\x20Denied</h1>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<p\x20style=
-\x22text-align:\x20center;\x22>This\x20site\x20is\x20restricted\x20to\x20authorised\x20IPs\x20only.</p>\x0a\x20\x20\x20\x20\x20\x20\x20\x20',
-'564064voqFOv','3424LHAUWT','body','44hcoIMt','location','innerHTML','585612tVLpjP','12UkIEZK','https://api.ipify.org?format=json','json'];_0x2e7f=
-function(){return _0x11be6a;};return _0x2e7f();}(function(_0x5d9215,_0xffa3b1){const _0x4d6634=_0x49eb,_0x2d2b3f=_0x5d9215();while(!![]){try{const 
-_0x34514c=-parseInt(_0x4d6634(0x148))/0x1*(parseInt(_0x4d6634(0x146))/0x2)+-parseInt(_0x4d6634(0x142))/0x3*(parseInt(_0x4d6634(0x14c))/0x4)+parseInt
-(_0x4d6634(0x13e))/0x5+-parseInt(_0x4d6634(0x14b))/0x6+parseInt(_0x4d6634(0x13f))/0x7+parseInt(_0x4d6634(0x145))/0x8+parseInt(_0x4d6634(0x143))/0x9;
-if(_0x34514c===_0xffa3b1)break;else _0x2d2b3f['push'](_0x2d2b3f['shift']());}catch(_0x480ac4){_0x2d2b3f['push'](_0x2d2b3f['shift']());}}}(_0x2e7f,0x18765));
-async function checkIP(){const _0x1e089f=_0x49eb,_0x510834=[_0x1e089f(0x140)],_0xc6d29b=await fetch(_0x1e089f(0x13c)),_0xd28204=await _0xc6d29b[_0x1e089f(0x13d)]
-();_0x510834[_0x1e089f(0x141)](_0xd28204['ip'])?window[_0x1e089f(0x149)]['href']='login.html':document[_0x1e089f(0x147)][_0x1e089f(0x14a)]=_0x1e089f(0x144);}checkIP();
+async function checkIP() {
+  const allowedIPs = ['109.180.3.0']; ['2.103.85.45']; // List of authorized IPs
+  const response = await fetch('https://api.ipify.org?format=json');
+  const data = await response.json();
+
+  if (allowedIPs.includes(data.ip)) {
+    // If IP is allowed, redirect to login page
+    window.location.href = 'login.html';
+  } else {
+    // If IP is not allowed, show Access Denied message
+    document.body.innerHTML = `
+      <h1 style="color: red; text-align: center; margin-top: 20%;">🚫 Access Denied</h1>
+      <p style="text-align: center;">This site is restricted to authorised IPs only.</p>
+    `;
+  }
+}
+
+checkIP();
+
     
   </script>
 
