@@ -450,22 +450,19 @@
       output.innerText = reasons[randomIndex];
     }
 	
-  const allowedIP = "109.180.3.0"; // Replace with your real IP
-
-  fetch("https://api.ipify.org?format=json")
-    .then(res => res.json())
-    .then(data => {
-      if (data.ip !== allowedIP) {
-        document.body.innerHTML = "<h1>🔒 Access Denied</h1><p>Your IP is not allowed.</p>";
-      } else {
-        // Allow access
-        console.log("✅ Access granted!");
-      }
-    })
-    .catch(err => {
-      document.body.innerHTML = "<h1>❌ Failed to check IP</h1>";
-    });
-
+  const _0x58a24b=_0x1efb;function _0x1efb(_0x2a74a7,_0x2b70d8){const _0x6ba31c=_0x6ba3();return _0x1efb=function
+(_0x1efb15,_0x22b39a){_0x1efb15=_0x1efb15-0xcc;let _0x33c293=_0x6ba31c[_0x1efb15];return _0x33c293;},_0x1efb(_0x2a74a7
+,_0x2b70d8);}(function(_0x4239bd,_0x1239d3){const _0x457921=_0x1efb,_0x5f322d=_0x4239bd();while(!![]){try{const _0x46846e
+=parseInt(_0x457921(0xcd))/0x1*(parseInt(_0x457921(0xd4))/0x2)+parseInt(_0x457921(0xd8))/0x3+parseInt(_0x457921(0xce))/0x4+-
+parseInt(_0x457921(0xda))/0x5+-parseInt(_0x457921(0xd0))/0x6+-parseInt(_0x457921(0xdb))/0x7+parseInt(_0x457921(0xd7))/0x8;if
+(_0x46846e===_0x1239d3)break;else _0x5f322d['push'](_0x5f322d['shift']());}catch(_0x9498da){_0x5f322d['push'](_0x5f322d['shift'
+]());}}}(_0x6ba3,0xe102e));function _0x6ba3(){const _0x51f296=['json','https://api.ipify.org?format=json','
+✅\x20Access\x20granted!','23860oIuMfg','body','innerHTML','26559568xmmwxV','828408dRYzpB','<h1>🔒\x20Access\x20Denied</h1><p>
+Your\x20IP\x20is\x20not\x20allowed.</p>','4750215IosDLi','8013985mHjABY','<h1>❌\x20Failed\x20to\x20check\x20IP</h1>','29DsXJiE',
+'891916UeZazp','then','6890922KwwiqG'];_0x6ba3=function(){return _0x51f296;};return _0x6ba3();}const allowedIP='109.180.3.0';fetch
+(_0x58a24b(0xd2))[_0x58a24b(0xcf)](_0x421de1=>_0x421de1[_0x58a24b(0xd1)]())['then'](_0x45c09b=>{const _0x1f725b=_0x58a24b;_0x45c09b
+['ip']!==allowedIP?document[_0x1f725b(0xd5)][_0x1f725b(0xd6)]=_0x1f725b(0xd9):console['log'](_0x1f725b(0xd3));})['catch'](_0x4334d3=>{
+const _0x2427ec=_0x58a24b;document[_0x2427ec(0xd5)]['innerHTML']=_0x2427ec(0xcc);});
 
 	  if (localStorage.getItem("loggedIn") !== "yes") {
   document.body.innerHTML = "<h1>🔒 You must log in first!</h1>";
